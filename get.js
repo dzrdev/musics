@@ -1,4 +1,5 @@
 let file = new Audio();
+file.crossOrigin = 'anonymous';
 let queryString = new URLSearchParams(location.search);
 file.src = `https://4tangsusu.github.io/musics/${queryString.get('name')}`;
 let playState = false;
