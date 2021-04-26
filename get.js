@@ -1,5 +1,6 @@
 let file = new Audio();
 file.src = `https://4tangsusu.github.io/musics/${name}`;
+console.log(location.href);
 let playState = false;
 function play() {
     file.play();
