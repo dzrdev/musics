@@ -1,34 +1,25 @@
 let file = new Audio();
 file.src = url;
-console.log(location.href);
-let playState = false;
-function play() {
-    file.play();
-    playState = true;
-}
-function pause() {
-    file.pause();
-    playState = false;
-}
 document.querySelector('.entryRunButtonBigMinimize').addEventListener('click', e => {
-    play();
+    file.play();
 });
 document.querySelector('.entryStopButtonMinimize').addEventListener('click', e => {
-    pause();
-    file.currentTime = 0;
+    file.pause();
 });
 document.querySelector('.entryPauseButtonMinimize').addEventListener('click', e => {
-    if (playState) {
-        pause();
+    if (file.paused) {
+        file.play();
     } else {
-        play();
+        file.pause();
     }
 });
+
 let btn = document.createElement('button');
 btn.innerHTML = '음원 다운로드';
 btn.addEventListener('click', e => {
     window.open(file.src, '_blank');
 });
+
 //button css code
 let css = btn.style;
 css.color = 'white';
