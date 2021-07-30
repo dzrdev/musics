@@ -4,7 +4,8 @@ document.querySelector('.entryRunButtonBigMinimize').addEventListener('click', e
     file.play();
 });
 document.querySelector('.entryStopButtonMinimize').addEventListener('click', e => {
-    file.stop();
+    file.pause();
+    file.currentTime = 0;
 });
 document.querySelector('.entryPauseButtonMinimize').addEventListener('click', e => {
     if (file.paused) {
